@@ -1,0 +1,65 @@
+{
+  "$schema": "../../schemas/paradigm.schema.json",
+  "id": "sme-verb-neg",
+  "pos": "V",
+  "match": "\\+V\\+IV\\+Neg",
+  "sections": [
+    {
+      "title": "Ind",
+      "tables": [
+        {
+          "headers": ["", ""],
+          "rows": [
+            { "label": "mun/mon", "cells": ["+V+Ind+Sg1"] },
+            { "label": "don",     "cells": ["+V+Ind+Sg2"] },
+            { "label": "son/dat", "cells": ["+V+Ind+Sg3"], "styleClass": "group-end" },
+            { "label": "moai",    "cells": ["+V+Ind+Du1"] },
+            { "label": "doai",    "cells": ["+V+Ind+Du2"] },
+            { "label": "soai",    "cells": ["+V+Ind+Du3"], "styleClass": "group-end" },
+            { "label": "mii",     "cells": ["+V+Ind+Pl1"] },
+            { "label": "dii",     "cells": ["+V+Ind+Pl2"] },
+            { "label": "sii/dat", "cells": ["+V+Ind+Pl3"] }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Imprt",
+      "tables": [
+        {
+          "headers": ["", ""],
+          "rows": [
+            { "label": "mun/mon", "cells": ["+V+Imprt+Sg1"] },
+            { "label": "don",     "cells": ["+V+Imprt+Sg2"] },
+            { "label": "son/dat", "cells": ["+V+Imprt+Sg3"], "styleClass": "group-end" },
+            { "label": "moai",    "cells": ["+V+Imprt+Du1"] },
+            { "label": "doai",    "cells": ["+V+Imprt+Du2"] },
+            { "label": "soai",    "cells": ["+V+Imprt+Du3"], "styleClass": "group-end" },
+            { "label": "mii",     "cells": ["+V+Imprt+Pl1"] },
+            { "label": "dii",     "cells": ["+V+Imprt+Pl2"] },
+            { "label": "sii/dat", "cells": ["+V+Imprt+Pl3"] }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sup",
+      "tables": [
+        {
+          "headers": ["", ""],
+          "rows": [
+            { "label": "mun/mon", "cells": ["+V+Sup+Sg1"] },
+            { "label": "don",     "cells": ["+V+Sup+Sg2"] },
+            { "label": "son/dat", "cells": ["+V+Sup+Sg3"], "styleClass": "group-end" },
+            { "label": "moai",    "cells": ["+V+Sup+Du1"] },
+            { "label": "doai",    "cells": ["+V+Sup+Du2"] },
+            { "label": "soai",    "cells": ["+V+Sup+Du3"], "styleClass": "group-end" },
+            { "label": "mii",     "cells": ["+V+Sup+Pl1"] },
+            { "label": "dii",     "cells": ["+V+Sup+Pl2"] },
+            { "label": "sii/dat", "cells": ["+V+Sup+Pl3"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

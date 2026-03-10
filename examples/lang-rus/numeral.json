@@ -1,0 +1,35 @@
+{
+  "$schema": "../../schemas/paradigm.schema.json",
+  "id": "rus-numeral",
+  "pos": "Num",
+  "match": "\\+Num\\+",
+  "exceptions": [
+    { "match": "^(один|одна|одно|одни)\\+", "use": "./numeral_odin.json" },
+    { "match": "^(два|две)\\+", "use": "./numeral_dva.json" },
+    { "match": "\\+Ord", "use": "./numeral_ordinal.json" }
+  ],
+  "fallbacks": [
+    { "replace": "+Num", "with": "+A" },
+    { "replace": "+Num", "with": "" },
+    { "append": "+Fac", "styleClass": "improbable" },
+    { "append": "+Prb", "styleClass": "improbable" }
+  ],
+  "sections": [
+    {
+      "title": "General forms",
+      "tables": [
+        {
+          "headers": ["", ""],
+          "rows": [
+            { "label": "Nom", "cells": ["+Num+MFN+AnIn+Nom"] },
+            { "label": "Acc", "cells": ["+Num+MFN+AnIn+Acc"] },
+            { "label": "Gen", "cells": ["+Num+MFN+AnIn+Gen"] },
+            { "label": "Loc", "cells": ["+Num+MFN+AnIn+Loc"] },
+            { "label": "Dat", "cells": ["+Num+MFN+AnIn+Dat"] },
+            { "label": "Ins", "cells": ["+Num+MFN+AnIn+Ins"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

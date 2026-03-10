@@ -1,0 +1,72 @@
+{
+  "$schema": "../../schemas/paradigm.schema.json",
+  "id": "rus-numeral-dva",
+  "pos": "Num",
+  "match": "^(два|две)\\+Num\\+",
+  "fallbacks": [
+    { "replace": "+Num", "with": "+A" },
+    { "replace": "+Num", "with": "" },
+    { "append": "+Fac", "styleClass": "improbable" },
+    { "append": "+Prb", "styleClass": "improbable" }
+  ],
+  "sections": [
+    {
+      "title": "General forms",
+      "tables": [
+        {
+          "headers": ["", "Msc", "Neu", "Fem"],
+          "rows": [
+            {
+              "label": "Nom",
+              "cells": [
+                "+Num+Msc+AnIn+Nom",
+                "+Num+Neu+AnIn+Nom",
+                "+Num+Fem+AnIn+Nom"
+              ]
+            },
+            {
+              "label": "Acc",
+              "cells": [
+                "+Num+Msc+Inan+Acc",
+                "+Num+Neu+AnIn+Acc",
+                "+Num+Fem+AnIn+Acc"
+              ]
+            },
+            {
+              "label": "Gen",
+              "cells": [
+                "+Num+MFN+AnIn+Gen",
+                "+Num+MFN+AnIn+Gen",
+                "+Num+MFN+AnIn+Gen"
+              ]
+            },
+            {
+              "label": "Loc",
+              "cells": [
+                "+Num+MFN+AnIn+Loc",
+                "+Num+MFN+AnIn+Loc",
+                "+Num+MFN+AnIn+Loc"
+              ]
+            },
+            {
+              "label": "Dat",
+              "cells": [
+                "+Num+MFN+AnIn+Dat",
+                "+Num+MFN+AnIn+Dat",
+                "+Num+MFN+AnIn+Dat"
+              ]
+            },
+            {
+              "label": "Ins",
+              "cells": [
+                "+Num+MFN+AnIn+Ins",
+                "+Num+MFN+AnIn+Ins",
+                "+Num+MFN+AnIn+Ins"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

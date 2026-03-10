@@ -1,0 +1,42 @@
+{
+  "$schema": "../../schemas/meta.schema.json",
+  "fst": "lang-sme",
+  "version": "0.1.0",
+  "tagPrefix": "+",
+  "excludeTags": [
+    "+Der", "+Err", "+Use/NG", "+Use/Circ", "+Use/GC", "+Use/SpellNoSugg",
+    "+Cmp", "+Cmp#", "+Guess", "+TODO", "+ABBR", "+ACR", "+Dyn"
+  ],
+  "localization": {
+    "Nom": { "en": "Nominative", "se": "Nominatiiva", "nb": "Nominativ" },
+    "Acc": { "en": "Accusative", "se": "Akkusatiiva", "nb": "Akkusativ" },
+    "Gen": { "en": "Genitive", "se": "Genitiiva", "nb": "Genitiv" },
+    "Ill": { "en": "Illative", "se": "Illatiiva", "nb": "Illativ" },
+    "Loc": { "en": "Locative", "se": "Lokatiiva", "nb": "Lokativ" },
+    "Com": { "en": "Comitative", "se": "Komitatiiva", "nb": "Komitativ" },
+    "Ess": { "en": "Essive", "se": "Essiiva", "nb": "Essiv" },
+    "Sg": { "en": "Singular", "se": "Ovttaidlohku", "nb": "Entall" },
+    "Pl": { "en": "Plural", "se": "Máŋggaidlohku", "nb": "Flertall" },
+    "Du": { "en": "Dual", "se": "Guovttidlohku", "nb": "Totall" },
+    "Ind": { "en": "Indicative", "se": "Indikatiiva", "nb": "Indikativ" },
+    "Cond": { "en": "Conditional", "se": "Konditionála", "nb": "Kondisjonalis" },
+    "Imprt": { "en": "Imperative", "se": "Imperatiiva", "nb": "Imperativ" },
+    "Pot": { "en": "Potential", "se": "Potentiála", "nb": "Potensialis" },
+    "Prs": { "en": "Present", "se": "Dálá áigi", "nb": "Presens" },
+    "Prt": { "en": "Preterite", "se": "Dáhpáhusáigi", "nb": "Preteritum" },
+    "ConNeg": { "en": "Connegative", "se": "Biehtadanhámis", "nb": "Nektingsform" },
+    "Inf": { "en": "Infinitive", "se": "Infinitiiva", "nb": "Infinitiv" },
+    "PrfPrc": { "en": "Perfect participle", "se": "Perfeavtta partisihppa", "nb": "Perfektum partisipp" },
+    "PrsPrc": { "en": "Present participle", "se": "Preseansa partisihppa", "nb": "Presens partisipp" },
+    "VGen": { "en": "Verb genitive", "se": "Vearba genitiiva", "nb": "Verb genitiv" },
+    "VAbess": { "en": "Verb abessive", "se": "Vearba abessiiva", "nb": "Verb abessiv" },
+    "Sup": { "en": "Supine", "se": "Supiidna", "nb": "Supinum" },
+    "Actio": { "en": "Action form", "se": "Aktio", "nb": "Aktio" },
+    "Ger": { "en": "Gerund", "se": "Gerundiiva", "nb": "Gerundium" },
+    "Attr": { "en": "Attributive", "se": "Attribuhtta", "nb": "Attributt" },
+    "Pos": { "en": "Positive", "se": "Positiiva", "nb": "Positiv" },
+    "Comp": { "en": "Comparative", "se": "Komparatiiva", "nb": "Komparativ" },
+    "Superl": { "en": "Superlative", "se": "Superlatiiva", "nb": "Superlativ" },
+    "Px": { "en": "Possessive suffixes", "se": "Eaiggáduslágiduvvon", "nb": "Possessivsuffiks" }
+  }
+}

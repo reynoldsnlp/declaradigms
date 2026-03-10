@@ -1,0 +1,139 @@
+{
+  "$schema": "../../schemas/paradigm.schema.json",
+  "id": "sme-noun",
+  "pos": "N",
+  "match": "\\+N\\+",
+  "exceptions": [
+    { "match": "\\+N\\+Prop", "use": "./noun_proper.json" }
+  ],
+  "sections": [
+    {
+      "title": "General forms",
+      "tables": [
+        {
+          "headers": ["", "Sg", "Pl"],
+          "rows": [
+            { "label": "Nom", "cells": ["+N+Sg+Nom", "+N+Pl+Nom"] },
+            { "label": "Acc", "cells": ["+N+Sg+Acc", "+N+Pl+Acc"] },
+            { "label": "Gen", "cells": ["+N+Sg+Gen", "+N+Pl+Gen"] },
+            { "label": "Ill", "cells": ["+N+Sg+Ill", "+N+Pl+Ill"] },
+            { "label": "Loc", "cells": ["+N+Sg+Loc", "+N+Pl+Loc"] },
+            { "label": "Com", "cells": ["+N+Sg+Com", "+N+Pl+Com"] },
+            { "label": "Ess", "cells": ["+N+Ess"], "colspan": [2] }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Px",
+      "showIf": { "hasTags": ["Px"] },
+      "tables": [
+        {
+          "title": "Nom",
+          "headers": ["", "Sg", "Pl"],
+          "rows": [
+            { "label": "mu",    "cells": ["+N+Sg+Nom+PxSg1", "+N+Pl+Nom+PxSg1"] },
+            { "label": "du",    "cells": ["+N+Sg+Nom+PxSg2", "+N+Pl+Nom+PxSg2"] },
+            { "label": "su",    "cells": ["+N+Sg+Nom+PxSg3", "+N+Pl+Nom+PxSg3"], "styleClass": "group-end" },
+            { "label": "munno", "cells": ["+N+Sg+Nom+PxDu1", "+N+Pl+Nom+PxDu1"] },
+            { "label": "dudno", "cells": ["+N+Sg+Nom+PxDu2", "+N+Pl+Nom+PxDu2"] },
+            { "label": "sudno", "cells": ["+N+Sg+Nom+PxDu3", "+N+Pl+Nom+PxDu3"], "styleClass": "group-end" },
+            { "label": "min",   "cells": ["+N+Sg+Nom+PxPl1", "+N+Pl+Nom+PxPl1"] },
+            { "label": "din",   "cells": ["+N+Sg+Nom+PxPl2", "+N+Pl+Nom+PxPl2"] },
+            { "label": "sin",   "cells": ["+N+Sg+Nom+PxPl3", "+N+Pl+Nom+PxPl3"] }
+          ]
+        },
+        {
+          "title": "Acc",
+          "headers": ["", "Sg", "Pl"],
+          "rows": [
+            { "label": "mu",    "cells": ["+N+Sg+Acc+PxSg1", "+N+Pl+Acc+PxSg1"] },
+            { "label": "du",    "cells": ["+N+Sg+Acc+PxSg2", "+N+Pl+Acc+PxSg2"] },
+            { "label": "su",    "cells": ["+N+Sg+Acc+PxSg3", "+N+Pl+Acc+PxSg3"], "styleClass": "group-end" },
+            { "label": "munno", "cells": ["+N+Sg+Acc+PxDu1", "+N+Pl+Acc+PxDu1"] },
+            { "label": "dudno", "cells": ["+N+Sg+Acc+PxDu2", "+N+Pl+Acc+PxDu2"] },
+            { "label": "sudno", "cells": ["+N+Sg+Acc+PxDu3", "+N+Pl+Acc+PxDu3"], "styleClass": "group-end" },
+            { "label": "min",   "cells": ["+N+Sg+Acc+PxPl1", "+N+Pl+Acc+PxPl1"] },
+            { "label": "din",   "cells": ["+N+Sg+Acc+PxPl2", "+N+Pl+Acc+PxPl2"] },
+            { "label": "sin",   "cells": ["+N+Sg+Acc+PxPl3", "+N+Pl+Acc+PxPl3"] }
+          ]
+        },
+        {
+          "title": "Gen",
+          "headers": ["", "Sg", "Pl"],
+          "rows": [
+            { "label": "mu",    "cells": ["+N+Sg+Gen+PxSg1", "+N+Pl+Gen+PxSg1"] },
+            { "label": "du",    "cells": ["+N+Sg+Gen+PxSg2", "+N+Pl+Gen+PxSg2"] },
+            { "label": "su",    "cells": ["+N+Sg+Gen+PxSg3", "+N+Pl+Gen+PxSg3"], "styleClass": "group-end" },
+            { "label": "munno", "cells": ["+N+Sg+Gen+PxDu1", "+N+Pl+Gen+PxDu1"] },
+            { "label": "dudno", "cells": ["+N+Sg+Gen+PxDu2", "+N+Pl+Gen+PxDu2"] },
+            { "label": "sudno", "cells": ["+N+Sg+Gen+PxDu3", "+N+Pl+Gen+PxDu3"], "styleClass": "group-end" },
+            { "label": "min",   "cells": ["+N+Sg+Gen+PxPl1", "+N+Pl+Gen+PxPl1"] },
+            { "label": "din",   "cells": ["+N+Sg+Gen+PxPl2", "+N+Pl+Gen+PxPl2"] },
+            { "label": "sin",   "cells": ["+N+Sg+Gen+PxPl3", "+N+Pl+Gen+PxPl3"] }
+          ]
+        },
+        {
+          "title": "Ill",
+          "headers": ["", "Sg", "Pl"],
+          "rows": [
+            { "label": "mu",    "cells": ["+N+Sg+Ill+PxSg1", "+N+Pl+Ill+PxSg1"] },
+            { "label": "du",    "cells": ["+N+Sg+Ill+PxSg2", "+N+Pl+Ill+PxSg2"] },
+            { "label": "su",    "cells": ["+N+Sg+Ill+PxSg3", "+N+Pl+Ill+PxSg3"], "styleClass": "group-end" },
+            { "label": "munno", "cells": ["+N+Sg+Ill+PxDu1", "+N+Pl+Ill+PxDu1"] },
+            { "label": "dudno", "cells": ["+N+Sg+Ill+PxDu2", "+N+Pl+Ill+PxDu2"] },
+            { "label": "sudno", "cells": ["+N+Sg+Ill+PxDu3", "+N+Pl+Ill+PxDu3"], "styleClass": "group-end" },
+            { "label": "min",   "cells": ["+N+Sg+Ill+PxPl1", "+N+Pl+Ill+PxPl1"] },
+            { "label": "din",   "cells": ["+N+Sg+Ill+PxPl2", "+N+Pl+Ill+PxPl2"] },
+            { "label": "sin",   "cells": ["+N+Sg+Ill+PxPl3", "+N+Pl+Ill+PxPl3"] }
+          ]
+        },
+        {
+          "title": "Loc",
+          "headers": ["", "Sg", "Pl"],
+          "rows": [
+            { "label": "mu",    "cells": ["+N+Sg+Loc+PxSg1", "+N+Pl+Loc+PxSg1"] },
+            { "label": "du",    "cells": ["+N+Sg+Loc+PxSg2", "+N+Pl+Loc+PxSg2"] },
+            { "label": "su",    "cells": ["+N+Sg+Loc+PxSg3", "+N+Pl+Loc+PxSg3"], "styleClass": "group-end" },
+            { "label": "munno", "cells": ["+N+Sg+Loc+PxDu1", "+N+Pl+Loc+PxDu1"] },
+            { "label": "dudno", "cells": ["+N+Sg+Loc+PxDu2", "+N+Pl+Loc+PxDu2"] },
+            { "label": "sudno", "cells": ["+N+Sg+Loc+PxDu3", "+N+Pl+Loc+PxDu3"], "styleClass": "group-end" },
+            { "label": "min",   "cells": ["+N+Sg+Loc+PxPl1", "+N+Pl+Loc+PxPl1"] },
+            { "label": "din",   "cells": ["+N+Sg+Loc+PxPl2", "+N+Pl+Loc+PxPl2"] },
+            { "label": "sin",   "cells": ["+N+Sg+Loc+PxPl3", "+N+Pl+Loc+PxPl3"] }
+          ]
+        },
+        {
+          "title": "Com",
+          "headers": ["", "Sg", "Pl"],
+          "rows": [
+            { "label": "mu",    "cells": ["+N+Sg+Com+PxSg1", "+N+Pl+Com+PxSg1"] },
+            { "label": "du",    "cells": ["+N+Sg+Com+PxSg2", "+N+Pl+Com+PxSg2"] },
+            { "label": "su",    "cells": ["+N+Sg+Com+PxSg3", "+N+Pl+Com+PxSg3"], "styleClass": "group-end" },
+            { "label": "munno", "cells": ["+N+Sg+Com+PxDu1", "+N+Pl+Com+PxDu1"] },
+            { "label": "dudno", "cells": ["+N+Sg+Com+PxDu2", "+N+Pl+Com+PxDu2"] },
+            { "label": "sudno", "cells": ["+N+Sg+Com+PxDu3", "+N+Pl+Com+PxDu3"], "styleClass": "group-end" },
+            { "label": "min",   "cells": ["+N+Sg+Com+PxPl1", "+N+Pl+Com+PxPl1"] },
+            { "label": "din",   "cells": ["+N+Sg+Com+PxPl2", "+N+Pl+Com+PxPl2"] },
+            { "label": "sin",   "cells": ["+N+Sg+Com+PxPl3", "+N+Pl+Com+PxPl3"] }
+          ]
+        },
+        {
+          "title": "Ess",
+          "headers": ["", ""],
+          "rows": [
+            { "label": "mu",    "cells": ["+N+Ess+PxSg1"] },
+            { "label": "du",    "cells": ["+N+Ess+PxSg2"] },
+            { "label": "su",    "cells": ["+N+Ess+PxSg3"], "styleClass": "group-end" },
+            { "label": "munno", "cells": ["+N+Ess+PxDu1"] },
+            { "label": "dudno", "cells": ["+N+Ess+PxDu2"] },
+            { "label": "sudno", "cells": ["+N+Ess+PxDu3"], "styleClass": "group-end" },
+            { "label": "min",   "cells": ["+N+Ess+PxPl1"] },
+            { "label": "din",   "cells": ["+N+Ess+PxPl2"] },
+            { "label": "sin",   "cells": ["+N+Ess+PxPl3"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

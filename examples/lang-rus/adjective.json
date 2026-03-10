@@ -1,0 +1,105 @@
+{
+  "$schema": "../../schemas/paradigm.schema.json",
+  "id": "rus-adjective",
+  "pos": "A",
+  "match": "\\+A\\+",
+  "fallbacks": [
+    { "append": "+Fac", "styleClass": "improbable" },
+    { "append": "+Prb", "styleClass": "improbable" }
+  ],
+  "sections": [
+    {
+      "title": "Long forms",
+      "tables": [
+        {
+          "headers": ["", "Msc", "Neu", "Fem", "Pl"],
+          "rows": [
+            {
+              "label": "Nom",
+              "cells": [
+                "+A+Msc+AnIn+Sg+Nom",
+                "+A+Neu+AnIn+Sg+Nom",
+                "+A+Fem+AnIn+Sg+Nom",
+                "+A+MFN+AnIn+Pl+Nom"
+              ]
+            },
+            {
+              "label": "Acc",
+              "cells": [
+                "+A+Msc+Inan+Sg+Acc",
+                "+A+Neu+AnIn+Sg+Acc",
+                "+A+Fem+AnIn+Sg+Acc",
+                "+A+MFN+Inan+Pl+Acc"
+              ]
+            },
+            {
+              "label": "Gen",
+              "cells": [
+                "+A+Msc+AnIn+Sg+Gen",
+                "+A+Neu+AnIn+Sg+Gen",
+                "+A+Fem+AnIn+Sg+Gen",
+                "+A+MFN+AnIn+Pl+Gen"
+              ]
+            },
+            {
+              "label": "Loc",
+              "cells": [
+                "+A+Msc+AnIn+Sg+Loc",
+                "+A+Neu+AnIn+Sg+Loc",
+                "+A+Fem+AnIn+Sg+Loc",
+                "+A+MFN+AnIn+Pl+Loc"
+              ]
+            },
+            {
+              "label": "Dat",
+              "cells": [
+                "+A+Msc+AnIn+Sg+Dat",
+                "+A+Neu+AnIn+Sg+Dat",
+                "+A+Fem+AnIn+Sg+Dat",
+                "+A+MFN+AnIn+Pl+Dat"
+              ]
+            },
+            {
+              "label": "Ins",
+              "cells": [
+                "+A+Msc+AnIn+Sg+Ins",
+                "+A+Neu+AnIn+Sg+Ins",
+                "+A+Fem+AnIn+Sg+Ins",
+                "+A+MFN+AnIn+Pl+Ins"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Short forms & comparison",
+      "validateRows": true,
+      "tables": [
+        {
+          "headers": ["", "Msc", "Neu", "Fem", "Pl"],
+          "rows": [
+            {
+              "label": "Pred",
+              "cells": [
+                "+A+Msc+Sg+Pred",
+                "+A+Neu+Sg+Pred",
+                "+A+Fem+Sg+Pred",
+                "+A+MFN+Pl+Pred"
+              ]
+            }
+          ]
+        },
+        {
+          "headers": ["", ""],
+          "rows": [
+            {
+              "label": "Cmpar",
+              "cells": ["+A+Cmpar+Pred"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

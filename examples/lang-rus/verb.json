@@ -1,0 +1,113 @@
+{
+  "$schema": "../../schemas/paradigm.schema.json",
+  "id": "rus-verb",
+  "pos": "V",
+  "match": "\\+V\\+",
+  "fallbacks": [
+    { "append": "+Fac", "styleClass": "improbable" },
+    { "append": "+Prb", "styleClass": "improbable" }
+  ],
+  "sections": [
+    {
+      "title": "Non-past",
+      "tables": [
+        {
+          "title": "Prs",
+          "showIf": { "hasTags": ["Impf"] },
+          "headers": ["", "Sg", "Pl"],
+          "rows": [
+            { "label": "1", "cells": ["+V+$aspect+Prs+Sg1", "+V+$aspect+Prs+Pl1"] },
+            { "label": "2", "cells": ["+V+$aspect+Prs+Sg2", "+V+$aspect+Prs+Pl2"] },
+            { "label": "3", "cells": ["+V+$aspect+Prs+Sg3", "+V+$aspect+Prs+Pl3"] }
+          ]
+        },
+        {
+          "title": "Fut",
+          "showIf": { "hasTags": ["Perf"] },
+          "headers": ["", "Sg", "Pl"],
+          "rows": [
+            { "label": "1", "cells": ["+V+$aspect+Fut+Sg1", "+V+$aspect+Fut+Pl1"] },
+            { "label": "2", "cells": ["+V+$aspect+Fut+Sg2", "+V+$aspect+Fut+Pl2"] },
+            { "label": "3", "cells": ["+V+$aspect+Fut+Sg3", "+V+$aspect+Fut+Pl3"] }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pst",
+      "tables": [
+        {
+          "headers": ["", ""],
+          "rows": [
+            { "label": "Msc",  "cells": ["+V+$aspect+Pst+Msc+Sg"] },
+            { "label": "Fem",  "cells": ["+V+$aspect+Pst+Fem+Sg"] },
+            { "label": "Neu",  "cells": ["+V+$aspect+Pst+Neu+Sg"] },
+            { "label": "Pl",   "cells": ["+V+$aspect+Pst+MFN+Pl"] }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Imp",
+      "tables": [
+        {
+          "headers": ["", ""],
+          "rows": [
+            { "label": "Sg (2nd)", "cells": ["+V+$aspect+Imp+Sg2"] },
+            { "label": "Pl (2nd)", "cells": ["+V+$aspect+Imp+Pl2"] }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Inf",
+      "tables": [
+        {
+          "headers": ["", ""],
+          "rows": [
+            { "label": "Inf", "cells": ["+V+$aspect+Inf"] }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Participles & gerunds",
+      "validateRows": true,
+      "tables": [
+        {
+          "title": "Participles",
+          "headers": ["", "Prs", "Pst"],
+          "rows": [
+            {
+              "label": "Active",
+              "cells": [
+                "+V+$aspect+PrsAct+Msc+AnIn+Sg+Nom",
+                "+V+$aspect+PstAct+Msc+AnIn+Sg+Nom"
+              ]
+            },
+            {
+              "label": "Passive",
+              "cells": [
+                "+V+$aspect+PrsPss+Msc+AnIn+Sg+Nom",
+                "+V+$aspect+PstPss+Msc+AnIn+Sg+Nom"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Verbal adverbs",
+          "headers": ["", "Prs", "Pst"],
+          "rows": [
+            {
+              "label": "Adv",
+              "cells": [
+                "+V+$aspect+PrsAct+Adv",
+                "+V+$aspect+PstAct+Adv"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

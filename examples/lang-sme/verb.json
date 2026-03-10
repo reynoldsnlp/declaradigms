@@ -1,0 +1,173 @@
+{
+  "$schema": "../../schemas/paradigm.schema.json",
+  "id": "sme-verb",
+  "pos": "V",
+  "match": "\\+V\\+",
+  "exceptions": [
+    { "match": "\\+V\\+IV\\+Neg", "use": "./verb_neg.json" }
+  ],
+  "sections": [
+    {
+      "title": "Ind",
+      "validateRows": true,
+      "tables": [
+        {
+          "title": "Prs",
+          "headers": ["", ""],
+          "rows": [
+            { "label": "mun/mon", "cells": ["+V+Ind+Prs+Sg1"] },
+            { "label": "don",     "cells": ["+V+Ind+Prs+Sg2"] },
+            { "label": "son/dat", "cells": ["+V+Ind+Prs+Sg3"], "styleClass": "group-end" },
+            { "label": "moai",    "cells": ["+V+Ind+Prs+Du1"] },
+            { "label": "doai",    "cells": ["+V+Ind+Prs+Du2"] },
+            { "label": "soai",    "cells": ["+V+Ind+Prs+Du3"], "styleClass": "group-end" },
+            { "label": "mii",     "cells": ["+V+Ind+Prs+Pl1"] },
+            { "label": "dii",     "cells": ["+V+Ind+Prs+Pl2"] },
+            { "label": "sii/dat", "cells": ["+V+Ind+Prs+Pl3"] }
+          ]
+        },
+        {
+          "title": "Prt",
+          "headers": ["", ""],
+          "rows": [
+            { "label": "mun/mon", "cells": ["+V+Ind+Prt+Sg1"] },
+            { "label": "don",     "cells": ["+V+Ind+Prt+Sg2"] },
+            { "label": "son/dat", "cells": ["+V+Ind+Prt+Sg3"], "styleClass": "group-end" },
+            { "label": "moai",    "cells": ["+V+Ind+Prt+Du1"] },
+            { "label": "doai",    "cells": ["+V+Ind+Prt+Du2"] },
+            { "label": "soai",    "cells": ["+V+Ind+Prt+Du3"], "styleClass": "group-end" },
+            { "label": "mii",     "cells": ["+V+Ind+Prt+Pl1"] },
+            { "label": "dii",     "cells": ["+V+Ind+Prt+Pl2"] },
+            { "label": "sii/dat", "cells": ["+V+Ind+Prt+Pl3"] }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cond",
+      "validateRows": true,
+      "tables": [
+        {
+          "title": "Prs",
+          "headers": ["", ""],
+          "rows": [
+            { "label": "mun/mon", "cells": ["+V+Cond+Prs+Sg1"] },
+            { "label": "don",     "cells": ["+V+Cond+Prs+Sg2"] },
+            { "label": "son/dat", "cells": ["+V+Cond+Prs+Sg3"], "styleClass": "group-end" },
+            { "label": "moai",    "cells": ["+V+Cond+Prs+Du1"] },
+            { "label": "doai",    "cells": ["+V+Cond+Prs+Du2"] },
+            { "label": "soai",    "cells": ["+V+Cond+Prs+Du3"], "styleClass": "group-end" },
+            { "label": "mii",     "cells": ["+V+Cond+Prs+Pl1"] },
+            { "label": "dii",     "cells": ["+V+Cond+Prs+Pl2"] },
+            { "label": "sii/dat", "cells": ["+V+Cond+Prs+Pl3"] }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Imprt",
+      "validateRows": true,
+      "tables": [
+        {
+          "headers": ["", ""],
+          "rows": [
+            { "label": "mun/mon", "cells": ["+V+Imprt+Sg1"] },
+            { "label": "don",     "cells": ["+V+Imprt+Sg2"] },
+            { "label": "son/dat", "cells": ["+V+Imprt+Sg3"], "styleClass": "group-end" },
+            { "label": "moai",    "cells": ["+V+Imprt+Du1"] },
+            { "label": "doai",    "cells": ["+V+Imprt+Du2"] },
+            { "label": "soai",    "cells": ["+V+Imprt+Du3"], "styleClass": "group-end" },
+            { "label": "mii",     "cells": ["+V+Imprt+Pl1"] },
+            { "label": "dii",     "cells": ["+V+Imprt+Pl2"] },
+            { "label": "sii/dat", "cells": ["+V+Imprt+Pl3"] }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pot",
+      "validateRows": true,
+      "tables": [
+        {
+          "title": "Prs",
+          "headers": ["", ""],
+          "rows": [
+            { "label": "mun/mon", "cells": ["+V+Pot+Prs+Sg1"] },
+            { "label": "don",     "cells": ["+V+Pot+Prs+Sg2"] },
+            { "label": "son/dat", "cells": ["+V+Pot+Prs+Sg3"], "styleClass": "group-end" },
+            { "label": "moai",    "cells": ["+V+Pot+Prs+Du1"] },
+            { "label": "doai",    "cells": ["+V+Pot+Prs+Du2"] },
+            { "label": "soai",    "cells": ["+V+Pot+Prs+Du3"], "styleClass": "group-end" },
+            { "label": "mii",     "cells": ["+V+Pot+Prs+Pl1"] },
+            { "label": "dii",     "cells": ["+V+Pot+Prs+Pl2"] },
+            { "label": "sii/dat", "cells": ["+V+Pot+Prs+Pl3"] }
+          ]
+        },
+        {
+          "title": "Prt",
+          "showIf": { "hasTags": ["Pot", "Prt"] },
+          "headers": ["", ""],
+          "rows": [
+            { "label": "mun/mon", "cells": ["+V+Pot+Prt+Sg1"] },
+            { "label": "don",     "cells": ["+V+Pot+Prt+Sg2"] },
+            { "label": "son/dat", "cells": ["+V+Pot+Prt+Sg3"], "styleClass": "group-end" },
+            { "label": "moai",    "cells": ["+V+Pot+Prt+Du1"] },
+            { "label": "doai",    "cells": ["+V+Pot+Prt+Du2"] },
+            { "label": "soai",    "cells": ["+V+Pot+Prt+Du3"], "styleClass": "group-end" },
+            { "label": "mii",     "cells": ["+V+Pot+Prt+Pl1"] },
+            { "label": "dii",     "cells": ["+V+Pot+Prt+Pl2"] },
+            { "label": "sii/dat", "cells": ["+V+Pot+Prt+Pl3"] }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Non-finite forms",
+      "tables": [
+        {
+          "headers": ["", ""],
+          "rows": [
+            { "label": "Inf",    "cells": ["+V+Inf"] },
+            { "label": "PrfPrc", "cells": ["+V+PrfPrc"] },
+            { "label": "PrsPrc", "cells": ["+V+PrsPrc"] },
+            { "label": "VGen",   "cells": ["+V+VGen"] },
+            { "label": "VAbess", "cells": ["+V+VAbess"] },
+            { "label": "Sup",    "cells": ["+V+Sup"] }
+          ]
+        },
+        {
+          "title": "Connegative forms",
+          "headers": ["", ""],
+          "rows": [
+            { "label": "Ind Prs ConNeg",  "cells": ["+V+Ind+Prs+ConNeg"] },
+            { "label": "Ind Prt ConNeg",  "cells": ["+V+Ind+Prt+ConNeg"] },
+            { "label": "Cond Prs ConNeg", "cells": ["+V+Cond+Prs+ConNeg"] },
+            { "label": "Imprt ConNeg",    "cells": ["+V+Imprt+ConNeg"] },
+            { "label": "Pot Prs ConNeg",  "cells": ["+V+Pot+Prs+ConNeg"] }
+          ]
+        },
+        {
+          "title": "Actio",
+          "headers": ["", ""],
+          "rows": [
+            { "label": "Nom", "cells": ["+V+Actio+Nom"] },
+            { "label": "Gen", "cells": ["+V+Actio+Gen"] },
+            { "label": "Loc", "cells": ["+V+Actio+Loc"] },
+            { "label": "Com", "cells": ["+V+Actio+Com"] },
+            { "label": "Ess", "cells": ["+V+Actio+Ess"] }
+          ]
+        },
+        {
+          "title": "Ger",
+          "headers": ["", "Sg", "Du", "Pl"],
+          "rows": [
+            { "label": "Vaikko gii", "cells": ["+V+Ger"], "colspan": [3], "styleClass": "group-end" },
+            { "label": "1. Pers.", "cells": ["+V+Ger+PxSg1", "+V+Ger+PxDu1", "+V+Ger+PxPl1"] },
+            { "label": "2. Pers.", "cells": ["+V+Ger+PxSg2", "+V+Ger+PxDu2", "+V+Ger+PxPl2"] },
+            { "label": "3. Pers.", "cells": ["+V+Ger+PxSg3", "+V+Ger+PxDu3", "+V+Ger+PxPl3"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

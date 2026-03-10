@@ -1,0 +1,45 @@
+{
+  "$schema": "../../schemas/meta.schema.json",
+  "fst": "lang-rus",
+  "version": "0.1.0",
+  "tagPrefix": "+",
+  "tagVariables": {
+    "$gender": ["Msc", "Fem", "Neu"],
+    "$animacy": ["Anim", "Inan"],
+    "$aspect": ["Perf", "Impf"]
+  },
+  "excludeTags": [
+    "+Der", "+Err", "+Use/NG", "+Cmp", "+Guess", "+TODO"
+  ],
+  "localization": {
+    "Nom": { "en": "Nominative", "ru": "Именительный" },
+    "Acc": { "en": "Accusative", "ru": "Винительный" },
+    "Gen": { "en": "Genitive", "ru": "Родительный" },
+    "Dat": { "en": "Dative", "ru": "Дательный" },
+    "Ins": { "en": "Instrumental", "ru": "Творительный" },
+    "Loc": { "en": "Prepositional", "ru": "Предложный" },
+    "Voc": { "en": "Vocative", "ru": "Звательный" },
+    "Loc2": { "en": "Locative", "ru": "Местный" },
+    "Par": { "en": "Partitive", "ru": "Разделительный" },
+    "Sg": { "en": "Singular", "ru": "Единственное число" },
+    "Pl": { "en": "Plural", "ru": "Множественное число" },
+    "Msc": { "en": "Masculine", "ru": "Мужской род" },
+    "Fem": { "en": "Feminine", "ru": "Женский род" },
+    "Neu": { "en": "Neuter", "ru": "Средний род" },
+    "MFN": { "en": "All genders", "ru": "Все роды" },
+    "Prs": { "en": "Present", "ru": "Настоящее время" },
+    "Fut": { "en": "Future", "ru": "Будущее время" },
+    "Pst": { "en": "Past", "ru": "Прошедшее время" },
+    "Imp": { "en": "Imperative", "ru": "Повелительное наклонение" },
+    "Inf": { "en": "Infinitive", "ru": "Инфинитив" },
+    "Pred": { "en": "Short form", "ru": "Краткая форма" },
+    "Cmpar": { "en": "Comparative", "ru": "Сравнительная степень" },
+    "PrsAct": { "en": "Present active participle", "ru": "Действительное причастие настоящего времени" },
+    "PstAct": { "en": "Past active participle", "ru": "Действительное причастие прошедшего времени" },
+    "PrsPss": { "en": "Present passive participle", "ru": "Страдательное причастие настоящего времени" },
+    "PstPss": { "en": "Past passive participle", "ru": "Страдательное причастие прошедшего времени" },
+    "Adv": { "en": "Verbal adverb (gerund)", "ru": "Деепричастие" },
+    "Anim": { "en": "Animate", "ru": "Одушевлённое" },
+    "Inan": { "en": "Inanimate", "ru": "Неодушевлённое" }
+  }
+}

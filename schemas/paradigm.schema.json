@@ -1,0 +1,340 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/paradigm-standard/v0.1/paradigm.schema.json",
+  "title": "Paradigm File",
+  "description": "Defines the complete paradigm table structure for one POS or sub-type, including matching rules, tag variables, fallbacks, and sections.",
+  "type": "object",
+  "required": ["id", "pos", "match", "sections"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "URI of this JSON Schema for validation."
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this paradigm (e.g. \"sme-noun\", \"rus-verb\")."
+    },
+    "pos": {
+      "type": "string",
+      "description": "Primary POS tag this paradigm handles (e.g. \"N\", \"V\", \"A\")."
+    },
+    "match": {
+      "type": "string",
+      "description": "Regex pattern tested against the full reading to select this paradigm. Uses a restricted PCRE-compatible subset (no lookbehind, no named groups)."
+    },
+    "exceptions": {
+      "type": "array",
+      "description": "Ordered list of exception rules. Each exception has a match regex and a use field naming another paradigm file. First match wins.",
+      "items": {
+        "$ref": "#/$defs/exception"
+      }
+    },
+    "tagVariables": {
+      "type": "object",
+      "description": "Template variables extracted from the reading. Referenced in cell tag sequences as $varName. Each variable maps to an ordered list of candidate tag values. Overrides same-named tagVariables from meta.json.",
+      "additionalProperties": {
+        "$ref": "#/$defs/tagVariableValues"
+      }
+    },
+    "fallbacks": {
+      "type": "array",
+      "description": "Ordered fallback strategies for failed generation. Tried in order; first success wins.",
+      "items": {
+        "$ref": "#/$defs/fallback"
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "The paradigm table structure: an ordered list of sections.",
+      "items": {
+        "$ref": "#/$defs/section"
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "styleClass": {
+      "description": "One or more semantic style class labels. Implementations map these to visual presentation.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+      ]
+    },
+    "exception": {
+      "type": "object",
+      "description": "An exception rule that overrides the base paradigm.",
+      "required": ["match", "use"],
+      "properties": {
+        "match": {
+          "type": "string",
+          "description": "Regex pattern tested against the full reading."
+        },
+        "use": {
+          "type": "string",
+          "description": "Full relative path to the paradigm file to use instead (must include .json).",
+          "pattern": "^(\\./|\\.\\./).+\\.json$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "tagVariableValues": {
+      "type": "array",
+      "description": "Ordered list of candidate tag values. The first boundary-matching tag in the reading is used.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "fallback": {
+      "type": "object",
+      "description": "A fallback strategy for failed generation.",
+      "properties": {
+        "replace": {
+          "type": "string",
+          "description": "Substring in the generator input to replace."
+        },
+        "with": {
+          "type": "string",
+          "description": "Replacement string (used with 'replace')."
+        },
+        "append": {
+          "type": "string",
+          "description": "String to append to the generator input."
+        },
+        "styleClass": {
+          "$ref": "#/$defs/styleClass",
+          "description": "Style class(es) applied to forms produced by this fallback."
+        }
+      },
+      "oneOf": [
+        {
+          "required": ["replace", "with"],
+          "not": { "required": ["append"] }
+        },
+        {
+          "required": ["append"],
+          "not": { "required": ["replace"] }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "condition": {
+      "description": "A declarative condition that evaluates to true or false based on the reading, lemma, or paradigm data.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["hasTags"],
+          "properties": {
+            "hasTags": {
+              "type": "array",
+              "description": "True if any form in the paradigm data contains ALL of these tags.",
+              "items": { "type": "string" },
+              "minItems": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["lacksTags"],
+          "properties": {
+            "lacksTags": {
+              "type": "array",
+              "description": "True if NO form in the paradigm data contains ANY of these tags.",
+              "items": { "type": "string" },
+              "minItems": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["hasLemma"],
+          "properties": {
+            "hasLemma": {
+              "type": "string",
+              "description": "True if the lemma matches this regex."
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["allOf"],
+          "properties": {
+            "allOf": {
+              "type": "array",
+              "description": "All conditions must be true.",
+              "items": { "$ref": "#/$defs/condition" },
+              "minItems": 2
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["anyOf"],
+          "properties": {
+            "anyOf": {
+              "type": "array",
+              "description": "At least one condition must be true.",
+              "items": { "$ref": "#/$defs/condition" },
+              "minItems": 2
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "section": {
+      "type": "object",
+      "description": "A named group of related tables.",
+      "required": ["tables"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Section heading (localization key or literal text)."
+        },
+        "tables": {
+          "type": "array",
+          "description": "Tables within this section.",
+          "items": { "$ref": "#/$defs/table" },
+          "minItems": 1
+        },
+        "showIf": {
+          "$ref": "#/$defs/condition",
+          "description": "Condition for including this section."
+        },
+        "validateRows": {
+          "type": "boolean",
+          "description": "If true, flag rows where ALL cells fail to generate."
+        },
+        "styleClass": {
+          "$ref": "#/$defs/styleClass",
+          "description": "Style class(es) for this section."
+        }
+      },
+      "additionalProperties": false
+    },
+    "table": {
+      "type": "object",
+      "description": "A table defining a grid of generated forms.",
+      "required": ["headers", "rows"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Table sub-heading."
+        },
+        "headers": {
+          "type": "array",
+          "description": "Column headers (localization keys or literal text). Empty string for unlabeled columns.",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "rows": {
+          "type": "array",
+          "description": "Row definitions.",
+          "items": { "$ref": "#/$defs/row" },
+          "minItems": 1
+        },
+        "showIf": {
+          "$ref": "#/$defs/condition",
+          "description": "Condition for including this table."
+        },
+        "validateRows": {
+          "type": "boolean",
+          "description": "If true, flag rows where ALL cells fail to generate."
+        },
+        "styleClass": {
+          "$ref": "#/$defs/styleClass",
+          "description": "Style class(es) for this table."
+        }
+      },
+      "additionalProperties": false
+    },
+    "row": {
+      "type": "object",
+      "description": "One horizontal line in a paradigm table.",
+      "required": ["label", "cells"],
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "Row label (localization key or literal text)."
+        },
+        "cells": {
+          "type": "array",
+          "description": "Cell definitions. Each cell is a tag sequence string, an object with tagSequence and styleClass, or an array where the first element is the primary form and subsequent elements are additional forms in object format.",
+          "items": {
+            "$ref": "#/$defs/cell"
+          },
+          "minItems": 1
+        },
+        "colspan": {
+          "type": "array",
+          "description": "Span widths for each cell. Each element specifies how many columns the corresponding cell occupies.",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "minItems": 1
+        },
+        "styleClass": {
+          "$ref": "#/$defs/styleClass",
+          "description": "Style class(es) for this row."
+        }
+      },
+      "additionalProperties": false
+    },
+    "cell": {
+      "description": "A cell in a paradigm table. Either a simple tag sequence string, an object with tagSequence and styleClass, or an array where the first element is the primary form and subsequent elements are additional forms in object format.",
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "A tag sequence string appended to the lemma to produce a generator input."
+        },
+        {
+          "$ref": "#/$defs/cellObject"
+        },
+        {
+          "type": "array",
+          "description": "A cell with additional forms. The first element is the primary form (string or object); subsequent elements are additional forms in object format.",
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "oneOf": [
+                { "type": "string" },
+                { "$ref": "#/$defs/cellObject" }
+              ]
+            }
+          ],
+          "items": {
+            "$ref": "#/$defs/cellObject"
+          }
+        }
+      ]
+    },
+    "cellObject": {
+      "type": "object",
+      "description": "A cell with a tag sequence, a required style class, and an optional onlyIfGenerates flag.",
+      "required": ["tagSequence", "styleClass"],
+      "properties": {
+        "tagSequence": {
+          "type": "string",
+          "description": "Tag sequence appended to lemma to produce a generator input."
+        },
+        "styleClass": {
+          "$ref": "#/$defs/styleClass",
+          "description": "Style class(es) for this cell."
+        },
+        "onlyIfGenerates": {
+          "type": "boolean",
+          "description": "If true (the default), this cell is only included if the generator produces a form. If false, the cell is always included with a placeholder if generation fails.",
+          "default": true
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

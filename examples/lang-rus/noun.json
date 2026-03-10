@@ -1,0 +1,51 @@
+{
+  "$schema": "../../schemas/paradigm.schema.json",
+  "id": "rus-noun",
+  "pos": "N",
+  "match": "\\+N\\+",
+  "fallbacks": [
+    { "replace": "+Num", "with": "+A" },
+    { "replace": "+Num", "with": "" },
+    { "append": "+Fac", "styleClass": "improbable" },
+    { "append": "+Prb", "styleClass": "improbable" }
+  ],
+  "sections": [
+    {
+      "title": "General forms",
+      "tables": [
+        {
+          "headers": ["", "Sg", "Pl"],
+          "rows": [
+            {
+              "label": "Nom",
+              "cells": [
+                ["+N+$gender+$animacy+Sg+Nom",
+                 { "tagSequence": "+N+$gender+$animacy+Sg+Voc", "styleClass": "subcase" }],
+                "+N+$gender+$animacy+Pl+Nom"
+              ]
+            },
+            { "label": "Acc", "cells": ["+N+$gender+$animacy+Sg+Acc", "+N+$gender+$animacy+Pl+Acc"] },
+            {
+              "label": "Gen",
+              "cells": [
+                ["+N+$gender+$animacy+Sg+Gen",
+                 { "tagSequence": "+N+$gender+$animacy+Sg+Par", "styleClass": "subcase" }],
+                "+N+$gender+$animacy+Pl+Gen"
+              ]
+            },
+            {
+              "label": "Loc",
+              "cells": [
+                ["+N+$gender+$animacy+Sg+Loc",
+                 { "tagSequence": "+N+$gender+$animacy+Sg+Loc2", "styleClass": "subcase" }],
+                "+N+$gender+$animacy+Pl+Loc"
+              ]
+            },
+            { "label": "Dat", "cells": ["+N+$gender+$animacy+Sg+Dat", "+N+$gender+$animacy+Pl+Dat"] },
+            { "label": "Ins", "cells": ["+N+$gender+$animacy+Sg+Ins", "+N+$gender+$animacy+Pl+Ins"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

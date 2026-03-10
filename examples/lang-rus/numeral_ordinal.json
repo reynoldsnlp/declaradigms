@@ -1,0 +1,78 @@
+{
+  "$schema": "../../schemas/paradigm.schema.json",
+  "id": "rus-numeral-ordinal",
+  "pos": "Num",
+  "match": "\\+Num\\+.*\\+Ord",
+  "fallbacks": [
+    { "replace": "+Num", "with": "+A" },
+    { "replace": "+Num", "with": "" },
+    { "append": "+Fac", "styleClass": "improbable" },
+    { "append": "+Prb", "styleClass": "improbable" }
+  ],
+  "sections": [
+    {
+      "title": "General forms",
+      "tables": [
+        {
+          "headers": ["", "Msc", "Neu", "Fem", "Pl"],
+          "rows": [
+            {
+              "label": "Nom",
+              "cells": [
+                "+Num+Ord+Msc+AnIn+Sg+Nom",
+                "+Num+Ord+Neu+AnIn+Sg+Nom",
+                "+Num+Ord+Fem+AnIn+Sg+Nom",
+                "+Num+Ord+MFN+AnIn+Pl+Nom"
+              ]
+            },
+            {
+              "label": "Acc",
+              "cells": [
+                "+Num+Ord+Msc+Inan+Sg+Acc",
+                "+Num+Ord+Neu+AnIn+Sg+Acc",
+                "+Num+Ord+Fem+AnIn+Sg+Acc",
+                "+Num+Ord+MFN+Inan+Pl+Acc"
+              ]
+            },
+            {
+              "label": "Gen",
+              "cells": [
+                "+Num+Ord+Msc+AnIn+Sg+Gen",
+                "+Num+Ord+Neu+AnIn+Sg+Gen",
+                "+Num+Ord+Fem+AnIn+Sg+Gen",
+                "+Num+Ord+MFN+AnIn+Pl+Gen"
+              ]
+            },
+            {
+              "label": "Loc",
+              "cells": [
+                "+Num+Ord+Msc+AnIn+Sg+Loc",
+                "+Num+Ord+Neu+AnIn+Sg+Loc",
+                "+Num+Ord+Fem+AnIn+Sg+Loc",
+                "+Num+Ord+MFN+AnIn+Pl+Loc"
+              ]
+            },
+            {
+              "label": "Dat",
+              "cells": [
+                "+Num+Ord+Msc+AnIn+Sg+Dat",
+                "+Num+Ord+Neu+AnIn+Sg+Dat",
+                "+Num+Ord+Fem+AnIn+Sg+Dat",
+                "+Num+Ord+MFN+AnIn+Pl+Dat"
+              ]
+            },
+            {
+              "label": "Ins",
+              "cells": [
+                "+Num+Ord+Msc+AnIn+Sg+Ins",
+                "+Num+Ord+Neu+AnIn+Sg+Ins",
+                "+Num+Ord+Fem+AnIn+Sg+Ins",
+                "+Num+Ord+MFN+AnIn+Pl+Ins"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

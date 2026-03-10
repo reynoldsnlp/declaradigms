@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/paradigm-standard/v0.1/meta.schema.json",
+  "title": "Paradigm Meta Configuration",
+  "description": "Shared configuration for a paradigm specification set, including FST metadata, localization, shared tag variables, and tag filtering.",
+  "type": "object",
+  "required": ["fst", "version", "tagPrefix"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "URI of this JSON Schema for validation."
+    },
+    "fst": {
+      "type": "string",
+      "description": "Identifier of the target FST (e.g. \"lang-sme\", \"lang-rus\")."
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of this paradigm specification set.",
+      "pattern": "^\\d+\\.\\d+(\\.\\d+)?$"
+    },
+    "tagPrefix": {
+      "type": "string",
+      "description": "String that precedes each tag in readings and tag sequences (e.g. \"+\", \"<\").",
+      "minLength": 1
+    },
+    "tagSuffix": {
+      "type": "string",
+      "description": "Optional string that follows each tag (e.g. \">\" for Apertium). If omitted, tags end at the next tagPrefix or end-of-string.",
+      "minLength": 1
+    },
+    "localization": {
+      "type": "object",
+      "description": "Tag-to-label mappings for UI display. Keys are tags or tag sequences; values are objects mapping ISO 639 language codes to display strings.",
+      "additionalProperties": {
+        "type": "object",
+        "description": "Localized labels for a tag, keyed by ISO 639 language code.",
+        "additionalProperties": {
+          "type": "string"
+        }
+      }
+    },
+    "tagVariables": {
+      "type": "object",
+      "description": "Shared template variables available to all paradigm files. Each variable maps to an ordered list of candidate tag values. Paradigm-level tagVariables with the same name take precedence.",
+      "additionalProperties": {
+        "$ref": "#/$defs/tagVariableValues"
+      }
+    },
+    "excludeTags": {
+      "type": "array",
+      "description": "Tag prefixes to exclude from paradigm generation. Readings containing these tags should be stripped or ignored when selecting paradigms.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "tagVariableValues": {
+      "type": "array",
+      "description": "Ordered list of candidate tag values. The first boundary-matching tag in the reading is used.",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    }
+  }
+}
