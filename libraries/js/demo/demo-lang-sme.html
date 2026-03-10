@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>declaradigms demo - North Sami</title>
+    <link rel="stylesheet" href="./demo.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <h1>North Sami Paradigm Demo</h1>
+        <p>Upload an HFST transducer and generate paradigms for each reading line using automatic paradigm matching.</p>
+        <p><a href="./index.html">Back to demo index</a></p>
+      </header>
+
+      <section class="panel">
+        <div class="controls">
+          <div>
+            <label for="locale">Locale</label>
+            <input id="locale" value="en" />
+          </div>
+
+          <div class="full">
+            <label for="readings">Readings (one per line)</label>
+            <textarea id="readings" rows="16"></textarea>
+          </div>
+
+          <div id="transducerChooser" class="full" style="display:none;">
+            <label for="hfstFile">HFST generator file (`.hfstol`)</label>
+            <input id="hfstFile" type="file" accept=".hfstol,.hfst,.ol" />
+          </div>
+
+          <div class="full">
+            <button id="runBtn" type="button">Generate HTML Table</button>
+          </div>
+        </div>
+
+        <p id="status" class="status">Waiting for transducer file.</p>
+      </section>
+
+      <section id="result"></section>
+    </main>
+
+    <script src="../libhfst.js"></script>
+    <script type="module" src="./demo-lang-sme.js"></script>
+  </body>
+</html>

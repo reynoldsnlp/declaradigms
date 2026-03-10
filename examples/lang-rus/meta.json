@@ -15,6 +15,7 @@
     "Nom": { "en": "Nominative", "ru": "Именительный" },
     "Acc": { "en": "Accusative", "ru": "Винительный" },
     "Gen": { "en": "Genitive", "ru": "Родительный" },
+    "Gen2": { "en": "Partitive genitive (Gen2)", "ru": "Родительный разделительный" },
     "Dat": { "en": "Dative", "ru": "Дательный" },
     "Ins": { "en": "Instrumental", "ru": "Творительный" },
     "Loc": { "en": "Prepositional", "ru": "Предложный" },

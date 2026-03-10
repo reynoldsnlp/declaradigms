@@ -1,0 +1,25 @@
+{
+  "name": "declaradigms",
+  "version": "0.1.0",
+  "description": "Generate declarative morphological paradigm HTML tables with HFST wasm.",
+  "main": "index.js",
+  "type": "commonjs",
+  "files": [
+    "index.js",
+    "libhfst.js",
+    "libhfst.wasm",
+    "libhfst-optimized.js",
+    "libhfst-optimized.wasm"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "morphology",
+    "paradigm",
+    "hfst",
+    "wasm",
+    "linguistics"
+  ],
+  "license": "MIT"
+}

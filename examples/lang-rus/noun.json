@@ -29,7 +29,7 @@
               "label": "Gen",
               "cells": [
                 ["+N+$gender+$animacy+Sg+Gen",
-                 { "tagSequence": "+N+$gender+$animacy+Sg+Par", "styleClass": "subcase" }],
+                 { "tagSequence": "+N+$gender+$animacy+Sg+Gen2", "styleClass": "subcase" }],
                 "+N+$gender+$animacy+Pl+Gen"
               ]
             },
