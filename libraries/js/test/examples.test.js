@@ -130,4 +130,41 @@ test('renders required declaradigm data attributes and styleClass markup', async
   assert.match(html, /data-declaradigm-section-title=\"General forms\"/);
   assert.match(html, /data-declaradigm-input-reading=\"работа\+N\+Fem\+Inan\+Sg\+Nom\"/);
   assert.match(html, /class=\"subcase\"/);
+  assert.match(html, /<span[^>]*data-reading=\"работа\+N\+Fem\+Inan\+Sg\+Nom\"/);
+});
+
+test('strips HFST flag diacritics from generated forms', async () => {
+  const meta = await readJson('examples/lang-sme/meta.json');
+  const noun = await readJson('examples/lang-sme/noun.json');
+
+  const generator = {
+    lookup() {
+      return [
+        [[
+          '@P.Px.add@',
+          'g',
+          'u',
+          'o',
+          'l',
+          'l',
+          'i',
+          '@D.CmpOnly.FALSE@',
+          '@D.CmpPref.TRUE@'
+        ], 0]
+      ];
+    }
+  };
+
+  const { html } = generateParadigmHtml({
+    reading: 'guolli+N+Sg+Nom',
+    meta,
+    paradigmsByPath: {
+      './noun.json': noun
+    },
+    generator,
+    locale: 'en'
+  });
+
+  assert.match(html, />guolli</);
+  assert.doesNotMatch(html, /@P\.|@D\./);
 });

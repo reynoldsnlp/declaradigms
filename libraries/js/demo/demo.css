@@ -172,6 +172,28 @@ button {
   color: #165f78;
 }
 
+.declaradigms td span[data-reading] {
+  position: relative;
+  cursor: help;
+}
+
+.declaradigms td span[data-reading]:hover::after {
+  content: attr(data-reading);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 6px);
+  transform: translateX(-50%);
+  background: #1f1f1f;
+  color: #fff;
+  padding: 0.3rem 0.45rem;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+}
+
 @media (max-width: 720px) {
   .controls {
     grid-template-columns: 1fr;
